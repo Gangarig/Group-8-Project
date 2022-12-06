@@ -1,0 +1,98 @@
+body {
+  height: 2000px;
+  background-color: #e8eddf;
+}
+#banner {
+  background-image: url(../images/banner.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.header-top {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  z-index: 999;
+  pointer-events: all;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+.headCont {
+  font-family: sans-serif;
+  font-weight: 400;
+  position: relative;
+  padding: 10px;
+  color: white;
+}
+.headCont a {
+  font-family: sans-serif;
+  font-weight: 40px;
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+}
+.headcont:last-of-type {
+  margin-left: 60px;
+}
+.headCont img {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+}
+.navbar {
+  position: absolute;
+  z-index: 999;
+  top: 90px;
+  width: 100%;
+}
+.navbar-top {
+  transition: 0.2s;
+}
+.nav-wrapper {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(14, 14, 15, 0.37);
+  backdrop-filter: blur(0.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+}
+.navbar-brand {
+  display: none;
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+  margin-left: auto !important;
+  display: block;
+}
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #f5cb5c;
+  margin-left: 30px;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-family: sans-serif;
+  color: white;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 400;
+  padding: 25px 20px;
+  text-transform: uppercase;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  transition: 0.5s;
+}
+.my-btn a {
+  font-family: sans-serif;
+  position: relative;
+  background-color: #f5cb5c;
+  color: #242423;
+  z-index: 1;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 3px;
+  display: block;
+  transition: 3s;
+  padding: 25px 20px;
+}
