@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 09:05 AM
+-- Generation Time: Dec 06, 2022 at 09:44 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -30,15 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `courses` (
   `id` int(10) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `duration` date NOT NULL,
+  `duration` int(11) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `start_date` int(11) NOT NULL,
+  `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `price_private` int(11) NOT NULL,
   `price_business` int(11) NOT NULL,
   `price_student` int(11) NOT NULL,
   `fk_trainer` int(11) NOT NULL,
-  `capacity` int(11) NOT NULL
+  `capacity` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -80,7 +82,6 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone_number` int(11) NOT NULL,
-  `fk_course` int(11) DEFAULT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -114,8 +115,7 @@ ALTER TABLE `reservations`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_course` (`fk_course`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -162,12 +162,6 @@ ALTER TABLE `registration_course`
 ALTER TABLE `reservations`
   ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`fk_course`) REFERENCES `courses` (`id`),
   ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`fk_user`) REFERENCES `user` (`id`);
-
---
--- Constraints for table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`fk_course`) REFERENCES `courses` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
