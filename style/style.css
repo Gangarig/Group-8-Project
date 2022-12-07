@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   height: 2000px;
   background-color: #e8eddf;
@@ -14,6 +15,9 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+/* HEADER STYLING STARTS HERE
+-------------------------------------------------- */
 
 .header-top {
   margin-top: 25px;
@@ -51,6 +55,13 @@ body {
   top: 5px;
 }
 
+/* --------------------------------------------------
+HEADER STYLING ENDS HERE */
+
+
+/* NAVBAR STYLING STARTS HERE
+-------------------------------------------------- */
+
 .navbar {
   position: absolute;
   z-index: 999;
@@ -78,7 +89,7 @@ body {
   display: block;
 }
 
-.navbar-light .navbar-nav .active > .nav-link {
+.navbar-light .navbar-nav .active>.nav-link {
   color: #f5cb5c;
   margin-left: 30px;
 }
@@ -98,6 +109,7 @@ body {
   transition: 0.5s;
 }
 
+/* Styling for the home link when it is collapsed */
 #collapsed-home-link {
   font-family: sans-serif;
   color: white;
@@ -114,6 +126,17 @@ body {
   transition: 0.5s;
 }
 
+/* Hides expanded home link and replaces it with the collapsed one (so that it is not duplicated in the toggler list) */
+@media screen and (max-width: 992px) {
+  #expanded-home-link {
+    display: none;
+  }
+
+  #collapsed-home-link {
+    display: block;
+  }
+}
+
 .my-btn a {
   font-family: sans-serif;
   position: relative;
@@ -128,9 +151,18 @@ body {
   transition: 3s;
   padding: 5px 15px;
 }
+
 .my-btn {
   margin-right: 20px;
 }
+
+/* --------------------------------------------------
+NAVBAR STYLING ENDS HERE */
+
+
+/* TRAINER CARDS STYLING STARTS HERE
+-------------------------------------------------- */
+
 .wrapper {
   padding: 30px 0;
   min-height: 100vh;
@@ -138,6 +170,7 @@ body {
   place-items: center;
   gap: 20px;
 }
+
 .card {
   height: 333px;
   width: 250px;
@@ -148,18 +181,22 @@ body {
   transition: 0.7s;
   overflow: hidden;
 }
+
 .img-wrapper {
   height: 100%;
   width: 100%;
   position: relative;
 }
+
 .card img {
   width: 100%;
   height: 100%;
 }
+
 .card:hover {
   background-position: 0 0;
 }
+
 .details {
   position: absolute;
   background-color: #ffffff;
@@ -173,27 +210,33 @@ body {
   right: 0;
   transition: 0.7s;
 }
+
 h3,
 h5 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
+
 h3 {
   letter-spacing: 1px;
   font-size: 14px;
 }
+
 h5 {
   font-size: 12px;
 }
+
 .about-me {
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin: 10px 0 5px 0;
 }
+
 .card:hover .details {
   bottom: 30px;
 }
+
 .img-wrapper:after {
   position: absolute;
   content: "";
@@ -205,18 +248,22 @@ h5 {
   opacity: 0;
   transition: 0.7s;
 }
+
 .card:hover .img-wrapper:after {
   opacity: 0.5;
 }
+
 i:hover {
   color: #529fe9;
   cursor: pointer;
 }
+
 @media screen and (min-width: 992px) {
   .wrapper {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
+
   .card {
     height: 400px;
     width: 300px;
@@ -224,7 +271,11 @@ i:hover {
   }
 }
 
-/* CUSTOMIZE THE REVIEW CAROUSEL
+/* --------------------------------------------------
+TRAINER CARDS STYLING ENDS HERE */
+
+
+/* REVIEW CAROUSEL STYLING STARTS HERE
 -------------------------------------------------- */
 
 /* Caption customization */
@@ -268,15 +319,5 @@ i:hover {
   filter: invert(100%);
 }
 
-/* RESPONSIVE CSS
+/* REVIEW CAROUSEL STYLING ENDS HERE
 -------------------------------------------------- */
-
-@media screen and (max-width: 992px) {
-  #expanded-home-link {
-    display: none;
-  }
-
-  #collapsed-home-link {
-    display: block;
-  }
-}
