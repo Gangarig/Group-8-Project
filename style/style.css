@@ -573,7 +573,7 @@ TRAINER CARDS STYLING ENDS HERE */
 .profile::after {
   background: linear-gradient(
     45deg,
-    hsl(5 97% 63% / 0.7) 0,
+    hsl(5 28% 90% / 0.7) 0,
     hsl(5 97% 63% / 0) 100%
   );
   opacity: 0;
@@ -649,4 +649,105 @@ TRAINER CARDS STYLING ENDS HERE */
 .profile:focus img {
   filter: grayscale(0);
   transform: scale(1.05) rotate(1deg);
+}
+/* courses start */
+
+.cards-course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-course {
+  margin: 20px;
+  padding: 20px;
+  width: 400px;
+  min-height: 200px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.card-course:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.card__link,
+.card__exit,
+.card__icon {
+  position: relative;
+  text-decoration: none;
+  color: #cfdbd5;
+}
+
+.card__link::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #f5cb5c;
+  transition: all 0.5s;
+}
+
+.card__link:hover::after {
+  width: 100%;
+}
+
+.card__exit {
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+.card__icon {
+  grid-row: 2/3;
+  font-size: 30px;
+}
+.card_info {
+  color: #e8eddf;
+}
+
+.card__title {
+  grid-row: 3/4;
+  font-weight: 400;
+  color: #f5cb5c;
+}
+
+.card__apply {
+  grid-row: 4/5;
+  align-self: center;
+}
+
+/* CARD BACKGROUNDS */
+
+.card-1 {
+  background: #333533;
+}
+
+.card-2 {
+  background: #333533;
+}
+
+.card-3 {
+  background: #333533;
+}
+
+.card-4 {
+  background: #333533;
+}
+
+.card-5 {
+  background: #333533;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+  .cards-course {
+    justify-content: center;
+  }
 }
