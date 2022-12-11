@@ -34,6 +34,8 @@ if (isset($_POST['signup'])) {
     $address = strip_tags($address);
     $address = htmlspecialchars($address);
 
+    $status = $_POST['status'];
+
     $password = trim($_POST['password']);
     $password = strip_tags($password);
     $password = htmlspecialchars($password);
@@ -102,8 +104,8 @@ if (isset($_POST['signup'])) {
     // if there's no error, continue to signup
     if (!$error) {
 
-        $query = "INSERT INTO user(name, birth_date, email, phone_number, address, profile_img ,password)
-                  VALUES ('$name','$birth_date','$email','$phone_number','$address','$picture->fileName','$password')";
+        $query = "INSERT INTO user(name, birth_date, email, phone_number, address, profile_img ,password, status)
+                  VALUES ('$name','$birth_date','$email','$phone_number','$address','$picture->fileName','$password', '$status')";
         $res = mysqli_query($link, $query);
 
         if ($res) {
@@ -154,7 +156,11 @@ mysqli_close($link);
             <span class="text-danger"> <?php echo $phone_numberError; ?> </span>
             <input type="date" name="birth_date" class="form-control m-1" value="<?php echo $birth_date ?>" />
             <span class="text-danger"> <?php echo $birth_dateError; ?> </span>
-            
+            <select class="form-control m-1" name="status">
+                <option value="STUDENT">Student</option>
+                <option value="PRIVATE">Private</option>
+                <option value="BUSINESS">Business</option>
+            </select>
             <div class="d-flex">
                 <input class='form-control m-1 w-50' type="text" name="address" placeholder="Enter Your Address" value="<?php echo $address ?>" />
                 <span class="text-danger"> <?php echo $addressError; ?> </span>

@@ -3,7 +3,7 @@
 $localhost = "127.0.0.1";
 $username = "root";
 $password = "";
-// local $password = "root";
+//$password = "root";
 $dbname = "first_aid";
 
 // create connection

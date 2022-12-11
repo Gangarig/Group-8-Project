@@ -3,11 +3,11 @@ session_start();
 require_once 'boot.php';
 require_once 'db_connect.php';
 // it will never let you open  (login) page if session is set
-if (isset($_SESSION['user']) != "") {
+if (isset($_SESSION['user'])) {
     header("Location: home.php");
     exit;
 }
-if (isset($_SESSION['admin']) != "") {
+if (isset($_SESSION['admin'])) {
     header("Location: dashboard.php"); // redirects to home.php
 }
 
@@ -53,6 +53,7 @@ if(isset($_POST['login'])){
                 header("Location: dashboard.php");
             } else {
                 $_SESSION['user'] = $row['id'];
+                $_SESSION['status'] = $row['status'];
                 header("Location: index.php");
             } 
         } else {
