@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-$role=$_SESSION["admin"];
-if(!ISSET($role)){
+if(!ISSET($_SESSION["admin"])){
     echo "You are not admin";
     die();
 }
