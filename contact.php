@@ -76,6 +76,9 @@
               <li class="nav-item">
                 <a href="" class="nav-link">Students</a>
               </li>
+              <li class="nav-item">
+              <a href="contact.php" class="nav-link">Contact</a>
+            </li>
             </ul>
             <div class="my-btn ms-auto">
               <a href="" class="nav-link">Login</a>
