@@ -164,7 +164,7 @@ NAVBAR STYLING ENDS HERE */
 
 .wrapper {
   padding: 30px 0;
-  min-height: 100vh;
+  min-height: 60vh;
   display: grid;
   place-items: center;
   gap: 20px;
