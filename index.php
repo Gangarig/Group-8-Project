@@ -24,11 +24,11 @@ if (isset($_SESSION["status"])) {
   <section id="header">
     <!-- Header start -->
     <div class="header-top">
-      <div class="container d-flex justify-content-between">
+      <div class="container d-flex justify-content-between flex-wrap">
         <a href="">
           <img class="logo" src="images/first_aid_navbar-logo.png" alt="" />
         </a>
-        <div class="d-inline-flex ml-auto">
+        <div class="d-block d-lg-inline-flex ms-0 ms-lg-auto">
           <div class="headCont bi bi-telephone-fill">
             Call us for free:<br /><a href="tel:+43 1 645 645">+43 1 645 645</a>
           </div>
@@ -65,10 +65,10 @@ if (isset($_SESSION["status"])) {
               <a href="" class="nav-link">Students</a>
             </li>
           </ul>
-          <div class="my-btn ms-auto">
+          <div class="my-btn ms-lg-auto">
             <a href="actions/login/login.php" class="nav-link">Login</a>
           </div>
-          <div class="my-btn ms-left">
+          <div class="my-btn">
             <a href="actions/login/register.php" class="nav-link">Register</a>
           </div>
         </div>

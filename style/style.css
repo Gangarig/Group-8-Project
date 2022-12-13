@@ -17,6 +17,13 @@ body {
   background-position: center;
 }
 
+/* Makes banner bigger on lower resolution to make space for the navbar when the toggler is clicked */
+@media screen and (max-width: 992px) and (max-height: 600px) {
+  #banner {
+    height: 140vh;
+  }
+}
+
 /* HEADER STYLING STARTS HERE
 -------------------------------------------------- */
 
@@ -71,6 +78,19 @@ HEADER STYLING ENDS HERE */
 
 .navbar-top {
   transition: 0.2s;
+}
+
+/* Adds margin to the top of the navbar on lower resolutions so that the phone & email has space to go */
+@media screen and (max-width: 992px) {
+  .navbar-top {
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-top {
+    margin-top: 8rem;
+  }
 }
 
 .nav-wrapper {
@@ -154,6 +174,25 @@ HEADER STYLING ENDS HERE */
 
 .my-btn {
   margin-right: 20px;
+}
+
+/* Makes login & register buttons smaller when collapsed */
+@media screen and (max-width: 992px) {
+  .my-btn {
+    margin-bottom: 8px;
+    text-align: center;
+    width: 20%;
+    margin-left: 6px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .my-btn {
+    margin-bottom: 8px;
+    text-align: center;
+    width: 40%;
+    margin-left: 6px;
+  }
 }
 
 /* --------------------------------------------------
