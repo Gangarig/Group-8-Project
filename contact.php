@@ -15,6 +15,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="style/style.css" />
+    <style>
+        .contact-form {
+            margin: 3rem;
+        }
+    </style>
     <title>First Aid Courses</title>
   </head>
 
@@ -71,6 +76,9 @@
               <li class="nav-item">
                 <a href="" class="nav-link">Students</a>
               </li>
+              <li class="nav-item">
+              <a href="contact.php" class="nav-link">Contact</a>
+            </li>
             </ul>
             <div class="my-btn ms-auto">
               <a href="" class="nav-link">Login</a>
@@ -84,41 +92,23 @@
       <!-- Navbar end -->
     </section>
     <div id="banner"></div>
-    <!-- Main start -->
-    <div class="cards-course">
-    <?php
-      require_once 'actions/components/db_connect.php';
 
-      session_start();
-      if(isset($_SESSION["status"])){
-        $role= $_SESSION['status'];
-        if($role == 'ADMIN'){
-            echo '<a href="/Group-8-Project/create_courses.php">Create course</a>';
-        }
-      }
-      $result = mysqli_query($link, "SELECT * FROM courses");
 
-      while($row = mysqli_fetch_array($result)) { 
-      ?>
-      <div class="card-course card-1">
-        <div class="card__icon bi bi-currency-euro">
-          <?php 
-            if(isset($role)){ ?>
-          <span><b><?= $role === 'PRIVATE' ? $row['price_private'] : ($role === 'BUSINESS' ? $row['price_business'] : ($role === 'STUDENT' ? $row['price_student'] : 'Please login'))?></b></span>
-          <?php } ?>
-        </div>
-        <p class="card__exit bi bi-alarm"><?= $row['duration']?></p>
-        <h2 class="card__title"><?= $row['name']?></h2>
-        <p class="card_info"><?= $row['description']?></p>
-        <p class="card__apply">
-          <?php if(isset($role)){ ?><a class="card__link btn btn-secondary" href="#">Apply Now <i class="fas fa-arrow-right"></i></a><?php } ?>
-        </p>
-        
-      </div>
-      <?php
-        }
-      ?>
-    </div>
+<form class="contact-form" method="post" action="/Group-8-Project/actions/contact_create.php" enctype="multipart/form-data">
+  <label for="name">Name:</label><br>
+  <input class="form-control" type="text" id="name" name="name" value=""><br><br>
+  <label for="surname">Surname:</label><br>
+  <input class="form-control" type="text" id="surname" name="surname" value=""><br><br>
+  <label for="email">E-mail:</label><br>
+  <input class="form-control" type="text" id="email" name="email" value=""><br><br>
+  <label for="text">Text:</label><br>
+  <textarea class="form-control" name="text" cols:"30" rows="10"></textarea>
+  <input class="btn btn-block btn-dark" type="submit" value="Send">
+</form> 
+
+</body>
+</html>
+
 
     <!-- Main end -->
     <div class="footer">
@@ -127,11 +117,12 @@
           <div class="col-md-4 col-xs-12">
             <div class="first">
               <h4>Courses</h4>
-              <p>First Aid Driving License</p>
-              <p>How to use a defibrillator</p>
-              <p>First Aid at Work (FAW)</p>
-              <p>Safety for babies & children</p>
-              <p>First Aid Course</p>
+              <p>Course 1</p>
+              <p>Course 2</p>
+              <p>Course 3</p>
+              <p>Course 4</p>
+              <p>Course 5</p>
+              <p>Course 6</p>
             </div>
           </div>
 
