@@ -792,3 +792,8 @@ TRAINER CARDS STYLING ENDS HERE */
     justify-content: center;
   }
 }
+.responsive {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}

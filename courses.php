@@ -127,12 +127,11 @@
           <div class="col-md-4 col-xs-12">
             <div class="first">
               <h4>Courses</h4>
-              <p>Course 1</p>
-              <p>Course 2</p>
-              <p>Course 3</p>
-              <p>Course 4</p>
-              <p>Course 5</p>
-              <p>Course 6</p>
+              <p>First Aid Driving License</p>
+              <p>How to use a defibrillator</p>
+              <p>First Aid at Work (FAW)</p>
+              <p>Safety for babies & children</p>
+              <p>First Aid Course</p>
             </div>
           </div>
 
