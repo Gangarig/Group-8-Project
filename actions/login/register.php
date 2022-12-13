@@ -6,25 +6,29 @@ if (isset($_SESSION['user']) != "") {
 if (isset($_SESSION['admin']) != "") {
     header("Location: dashboard.php"); // redirects to home.php
 }
-require_once 'db_connect.php';
-require_once 'file_upload.php';
-require_once 'boot.php';
+require_once '../components/db_connect.php';
+require_once '../components/file_upload.php';
+require_once '../components/boot.php';
 
 $error = false;
-$name = $birth_date = $email = $address = $password = $picture = $phone_number = $address =  '';
+$fname = $lname = $birth_date = $email = $address = $password = $picture = $phone_number = $address =  '';
 $nameError = $birth_dateError = $emailError = $addressError = $passwordError = $picError = $phone_numberError = $passwordError = '';
 if (isset($_POST['signup'])) {
 
     // sanitise user input to prevent sql injection
     // trim - strips whitespace (or other characters) from the beginning and end of a string
-    $name = trim($_POST['name']);
+    $fname = trim($_POST['fname']);
 
 
     // strip_tags -- strips HTML and PHP tags from a string
-    $name = strip_tags($name);
+    $fname = strip_tags($fname);
 
     // htmlspecialchars converts special characters to HTML entities
-    $name = htmlspecialchars($name);
+    $fname = htmlspecialchars($fname);
+
+    $lname = trim($_POST['lname']);
+    $lname = strip_tags($lname);
+    $lname = htmlspecialchars($lname);
 
     $email = trim($_POST['email']);
     $email = strip_tags($email);
@@ -49,13 +53,13 @@ if (isset($_POST['signup'])) {
     $picture = file_upload($_FILES['profile_img']);
 
     // basic name validation
-    if (empty($name)) {
+    if (empty($fname) || empty($lname)) {
         $error = true;
         $nameError = "Please enter your full name and surname";
-    } else if (strlen($name) < 3 ) {
+    } else if (strlen($fname) < 3 || strlen($lname) < 3) {
         $error = true;
         $nameError = "Name and surname must have at least 3 characters.";
-    } else if (!preg_match("/^[a-zA-Z]+$/", $name) ) {
+    } else if (!preg_match("/^[a-zA-Z]+$/", $fname) || !preg_match("/^[a-zA-Z]+$/", $lname) ) {
         $error = true;
         $nameError = "Name and surname must contain only letters and no spaces.";
     }
@@ -104,8 +108,8 @@ if (isset($_POST['signup'])) {
     // if there's no error, continue to signup
     if (!$error) {
 
-        $query = "INSERT INTO user(name, birth_date, email, phone_number, address, profile_img ,password, status)
-                  VALUES ('$name','$birth_date','$email','$phone_number','$address','$picture->fileName','$password', '$status')";
+        $query = "INSERT INTO user(fname , lname , birth_date, email, phone_number, address, profile_img ,password, status)
+                  VALUES ('$fname', '$lname','$birth_date','$email','$phone_number','$address','$picture->fileName','$password', '$status')";
         $res = mysqli_query($link, $query);
 
         if ($res) {
@@ -148,7 +152,9 @@ mysqli_close($link);
             <?php
             }
             ?>
-            <input type="text" name="name" class="form-control m-1 " placeholder="First Name and Last Name" maxlength="50" value="<?php echo $name ?>" />
+            <input type="text" name="fname" class="form-control m-1 " placeholder="First Name" maxlength="50" value="<?php echo $fname ?>" />
+            <span class="text-danger"> <?php echo $nameError; ?> </span>
+            <input type="text" name="lname" class="form-control m-1 " placeholder="Last Name" maxlength="50" value="<?php echo $lname ?>" />
             <span class="text-danger"> <?php echo $nameError; ?> </span>
             <input type="email" name="email" class="form-control m-1" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
             <span class="text-danger"> <?php echo $emailError; ?> </span>

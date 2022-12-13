@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once 'boot.php';
-require_once 'db_connect.php';
+require_once '../components/boot.php';
+require_once '../components/db_connect.php';
 // it will never let you open  (login) page if session is set
 if (isset($_SESSION['user'])) {
-    header("Location: home.php");
+    header("Location: ../../profile.php");
     exit;
 }
 if (isset($_SESSION['admin'])) {
-    header("Location: dashboard.php"); // redirects to home.php
+    header("Location: ../../dashboard.php"); // redirects to dashboard.php
 }
 
 
@@ -43,18 +43,18 @@ if(isset($_POST['login'])){
     // if there is no error, continue to login 
     if(!$error) {
         $password = hash('sha256',$password); // password hashing
-        $sql = "SELECT id, name, birth_date, password , address, phone_number, status FROM user WHERE email= '$email'";
+        $sql = "SELECT id, fname, lname, birth_date, password , address, phone_number, status FROM user WHERE email= '$email'";
         $result = mysqli_query($link , $sql);
         $row = mysqli_fetch_assoc($result);
         $count = mysqli_num_rows($result);
         if($count == 1 && $row['password'] == $password){
             if($row['status'] == 'admin') {
                 $_SESSION['admin'] = $row['id'];
-                header("Location: dashboard.php");
+                header("Location: ../dashboard.php");
             } else {
                 $_SESSION['user'] = $row['id'];
                 $_SESSION['status'] = $row['status'];
-                header("Location: index.php");
+                header("Location: ../profile.php");
             } 
         } else {
             $errorMSG = "Incorrect Credentials, Try again...";

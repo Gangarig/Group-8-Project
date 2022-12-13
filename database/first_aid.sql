@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 07, 2022 at 05:20 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Dec 13, 2022 at 09:57 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -86,7 +86,8 @@ CREATE TABLE `reservations` (
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `fname` varchar(255) NOT NULL,
+  `lname` varchar(255) NOT NULL,
   `birth_date` date NOT NULL,
   `profile_img` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
@@ -95,6 +96,13 @@ CREATE TABLE `user` (
   `phone_number` int(11) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `fname`, `lname`, `birth_date`, `profile_img`, `password`, `email`, `address`, `phone_number`, `status`) VALUES
+(1, 'Gangarig', 'Nyamsuren', '2022-12-13', '639830ae82be3.jpg', 'ae7dece7337e7bee49dda595e5bcd94f48f2da0b2e306926cec0868435e5150f', 'enkhmurun@gmail.com', '151b/1/12 Leopoldauer straße', 2147483647, 'STUDENT');
 
 --
 -- Indexes for dumped tables
@@ -154,7 +162,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
