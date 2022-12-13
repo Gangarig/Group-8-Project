@@ -664,7 +664,7 @@ TRAINER CARDS STYLING ENDS HERE */
   width: 400px;
   min-height: 200px;
   display: grid;
-  grid-template-rows: 20px 50px 1fr 50px;
+  grid-template-rows: 20px 50px 80px 1fr 50px;
   border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
@@ -707,7 +707,9 @@ TRAINER CARDS STYLING ENDS HERE */
   grid-row: 2/3;
   font-size: 30px;
 }
+
 .card_info {
+  grid-row: 4/5;
   color: #e8eddf;
 }
 
@@ -718,7 +720,7 @@ TRAINER CARDS STYLING ENDS HERE */
 }
 
 .card__apply {
-  grid-row: 4/5;
+  grid-row: 5/6;
   align-self: center;
 }
 
