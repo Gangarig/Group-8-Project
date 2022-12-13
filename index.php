@@ -1,3 +1,9 @@
+<?php
+session_start();
+require_once './actions/components/db_connect.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
