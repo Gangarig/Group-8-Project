@@ -64,6 +64,9 @@ if (isset($_SESSION["status"])) {
             <li class="nav-item">
               <a href="" class="nav-link">Students</a>
             </li>
+            <li class="nav-item">
+              <a href="contact.php" class="nav-link">Contact</a>
+            </li>
           </ul>
           <div class="my-btn ms-lg-auto">
             <a href="actions/login/login.php" class="nav-link">Login</a>
