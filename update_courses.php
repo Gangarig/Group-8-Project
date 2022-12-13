@@ -9,7 +9,7 @@
 <?php
 
 require_once 'actions/role_check.php';
-require_once 'actions/db_connect.php';
+require_once 'actions/components/db_connect.php';
 $name = $_GET['name'];
 
 $result = mysqli_query($link, "SELECT * FROM courses WHERE name='" . $name . "'");

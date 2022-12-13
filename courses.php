@@ -87,7 +87,7 @@
     <!-- Main start -->
     <div class="cards-course">
     <?php
-      require_once 'actions/db_connect.php';
+      require_once 'actions/components/db_connect.php';
 
       session_start();
       if(isset($_SESSION["status"])){
