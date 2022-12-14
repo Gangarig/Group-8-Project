@@ -50,11 +50,11 @@ if(isset($_POST['login'])){
         if($count == 1 && $row['password'] == $password){
             if($row['status'] == 'admin') {
                 $_SESSION['admin'] = $row['id'];
-                header("Location: ../dashboard.php");
+                header("Location: ../../dashboard.php");
             } else {
                 $_SESSION['user'] = $row['id'];
                 $_SESSION['status'] = $row['status'];
-                header("Location: ../profile.php");
+                header("Location: ../../profile.php");
             } 
         } else {
             $errorMSG = "Incorrect Credentials, Try again...";

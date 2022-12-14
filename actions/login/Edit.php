@@ -5,16 +5,25 @@ require_once '../components/db_connect.php';
 require_once '../components/file_upload.php';
 // if session is not set this will redirect to login page
 if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
-    header("Location: ../../index.html");
+    header("Location: ../../index.php");
     exit;
 }
+$backBtn = '';
+//if it is a user it will create a back button to home.php
+if (isset($_SESSION["user"])) {
+    $backBtn = "../../profile.php";
+}
+//if it is a admin it will create a back button to dashboard.php
+if (isset($_SESSION["admin"])) {
+    $backBtn = "../../dashboard.php";
+}
 
-$fname = $lname = $phone_number = $address = '';
+
 //fetch and populate form
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM user WHERE id = {$id}";
-    $result = mysqli_query($link, $sql);
+    $result = mysqli_query($connect, $sql);
     if (mysqli_num_rows($result) == 1) {
         $data = mysqli_fetch_assoc($result);
         $fname = $data['fname'];
@@ -33,25 +42,35 @@ if (isset($_POST["submit"])) {
     $phone_number = $_POST['phone_number'];
     $address = $_POST['address'];
     $profile_img = $_POST['profile_img'];
-
     $id = $_POST['id'];
     //variable for upload pictures errors is initialized
     $uploadError = '';
     $pictureArray = file_upload($_FILES['picture']); //file_upload() called
     $picture = $pictureArray->fileName;
     if ($pictureArray->error === 0) {
-        ($_POST["profile_img"] == "noimage.png") ?: unlink("pictures/{$_POST["picture"]}");
-        $sql = "UPDATE user SET fname = '$fname', lname = '$lname', phone_number = '$phone_number', address = '$address', profile_img = '$pictureArray->fileName' WHERE id = {$id}";
+        ($_POST["profile_img"] == "noimage.png") ?: unlink("../images/{$_POST["profile_img"]}");
+        $sql = "UPDATE user SET 
+        fname = '$fname', 
+        lname = '$lname', 
+        phone_number = '$phone_number', 
+        address = '$address', 
+        profile_img = '$pictureArray->fileName' 
+        WHERE id = {$id}";
     } else {
-        $sql = "UPDATE user SET fname = '$fname', lname = '$lname', phone_number = '$phone_number', address = '$address', WHERE id = {$id}";
+        $sql = "UPDATE user SET 
+        fname = '$fname', 
+        lname = '$lname', 
+        phone_number = '$phone_number', 
+        address = '$address' 
+        WHERE id = {$id}";
     }
     if (mysqli_query($connect, $sql) === true) {
-        $class = "alert alert-success";
+        $class = "alert alert-dark";
         $message = "The record was successfully updated";
         $uploadError = ($pictureArray->error != 0) ? $pictureArray->ErrorMessage : '';
         header("refresh:3;url=edit.php?id={$id}");
     } else {
-        $class = "alert alert-danger";
+        $class = "alert alert-dark";
         $message = "Error while updating record : <br>" . $connect->error;
         $uploadError = ($pictureArray->error != 0) ? $pictureArray->ErrorMessage : '';
         header("refresh:3;url=edit.php?id={$id}");
@@ -60,7 +79,7 @@ if (isset($_POST["submit"])) {
 
 
 
-mysqli_close($link);
+mysqli_close($connect);
 
 ?>
 
@@ -91,8 +110,9 @@ mysqli_close($link);
         <input class='m-1 form-control' type="text" name="phone_number" placeholder="size" maxlength="255" value="<?php echo $phone_number; ?>"> 
         <hr />
         <input type="hidden" name="profile_img" value="<?php echo $profile_img ?>" />
+        <input type="hidden" name="id" value="<?php echo $data['id'] ?>" />
         <button type="submit" class="btn btn-block btn-dark" name="submit">save the changes</button>
-        <a href=''><button class="btn btn-dark" type="button">Back</button></a>
+        <a href="<?php echo $backBtn ?>"><button class="btn btn-dark" type="button">Back</button></a>../
         </form>
 </div>
        

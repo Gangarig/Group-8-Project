@@ -8,7 +8,9 @@ $dbname = "first_aid";
 
 // create connection
 $link = mysqli_connect($localhost, $username, $password, $dbname);
-// check connection
+//or
+$connect = new  mysqli($localhost, $username, $password, $dbname);
+
 if (!$link) {
     die("Connection failed: " . mysqli_connect_error());
 // }else {

@@ -6,7 +6,7 @@ if (isset($_SESSION["status"])) {
         <a href="profile.php" class="nav-link">My Profile</a>
     </div>
     <div class="my-btn">
-        <a href="" class="nav-link">Logout</a>
+        <a href="actions/login/logout.php?logout" class="nav-link">Logout</a>
     </div>
     ';
 } else $profile_buttons = '

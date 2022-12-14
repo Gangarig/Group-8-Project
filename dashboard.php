@@ -3,9 +3,21 @@ session_start ();
 
 require_once ('./actions/components/boot.php');
 require_once ('./actions/components/db_connect.php');
-if (isset($_SESSION['user']) != "") {
-    header("Location: index.html"); // redirects to home.php
+// if session is not set this will redirect to login page
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
+    header("Location: actions/components/login.php");
+    exit;
 }
+//if session user exist it shouldn't access dashboard.php
+if (isset($_SESSION['status']) == 'user') {
+    header("Location: profile.php");
+    exit;
+}
+if (isset($_SESSION['status']) == 'trainer') {
+    header("Location: trainer.php");
+    exit;
+}
+
 
 
 
@@ -19,12 +31,16 @@ if (isset($_SESSION['user']) != "") {
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
+
         <div>
-            <a  class="btn btn-dark"  href="">User list</a>
-            <a  class="btn btn-dark"  href="">Reservations</a>
-            <a  class="btn btn-dark"  href="">Registrations</a>
-            <a  class="btn btn-dark"  href="">Course list</a>
-            <a class="btn btn-dark"  href="">Trainers</a>
+            <a  class="btn btn-dark"  href="./actions/user_list/accounts.php">User list</a>
+            <a  class="btn btn-dark"  href="actions\reservations\reservation.php">Reservations</a>
+            <a  class="btn btn-dark"  href="actions\registrations\registration.php">Registrations</a>
+            <a  class="btn btn-dark"  href="./actions/courses.php">Course list</a>
+            <a class="btn btn-dark"  href="./actions/trainer.php">Trainers</a>
+            <a class="btn btn-dark"  href="./actions/login/logout.php?logout">Log out</a>
         </div>
+        
+
     </body>
 </html>
