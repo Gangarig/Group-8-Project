@@ -2,7 +2,7 @@
 $result = mysqli_query($link, "SELECT `id`, `name` FROM `courses`");
 $courses = '';
 while ($row = mysqli_fetch_array($result)) {
-    $courses .= '<li><a href="#">' . $row["name"] . '</a></li>';
+    $courses .= '<p href="#">' . $row["name"] . '</p>';
 }
 
 $footer = '
@@ -10,11 +10,9 @@ $footer = '
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-xs-12">
-                <div class="second">
+                <div class="first">
                     <h4>Courses</h4>
-                    <ul>
                         ' . $courses . '
-                    </ul>
                 </div>
             </div>
 
