@@ -1,12 +1,12 @@
 <?php
-require_once 'db_connect.php';
+require_once './components/db_connect.php';
 if ($_POST) {    
         $sql = "UPDATE courses SET name='". $_POST['name'] ."',duration='" 
-            . $_POST['duration'] . "',address='". $_POST['address'] ."',start_date='". $_POST['start_date'] 
-                ."',end_date='". $_POST['end_date'] ."',price_private='". $_POST['price_private'] 
-                ."', price_business='". $_POST['price_business'] ."', price_student='". $_POST['price_student']
-                ."', fk_trainer='". $_POST['fk_trainer'] ."',capacity='". $_POST['capacity']
-                ."', image='". $_POST['image'] ."',description='". $_POST['description']
+                . $_POST['duration'] . "',address='". $_POST['address'] ."',start_date='". $_POST['start_date'] 
+                ."',end_date='". $_POST['end_date'] ."',price_private=". $_POST['price_private'] 
+                .", price_business=". $_POST['price_business'] .", price_student=". $_POST['price_student']
+                .", fk_trainer=". $_POST['fk_trainer'] .",capacity=". $_POST['capacity']
+                .", image='". $_POST['image'] ."',description='". $_POST['description']
                 ."' WHERE id='" . $_POST["id"] . "'";
                 if ($link->query($sql) === TRUE) {
                     echo "New record created successfully";
@@ -32,7 +32,7 @@ if ($_POST) {
             </div>
             <div class="alert alert-<?php echo $class;?>" role="alert">
                 <p><?php echo ($message) ?? ''; ?></p>
-                <a href='../course_update.php?id=<?=$_POST["id"];?>'><button class="btn btn-warning" type='button'>Back</button></a>
+                <a href='../update_courses.php?id=<?=$_POST["id"];?>'><button class="btn btn-warning" type='button'>Back</button></a>
                 <a href='../index.php'><button class="btn btn-success" type='button'>Home</button></a>
             </div>
         </div>

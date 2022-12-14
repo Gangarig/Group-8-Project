@@ -8,7 +8,7 @@
 
 <?php
 
-require_once 'actions/role_check.php';
+require_once '../role_check.php';
 ?>
 
 <form method="post" action="/Group-8-Project/actions/c_create.php" enctype="multipart/form-data">
