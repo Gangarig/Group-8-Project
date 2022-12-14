@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2022 at 12:46 PM
+-- Generation Time: Dec 14, 2022 at 02:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -78,6 +78,14 @@ CREATE TABLE `reservations` (
   `fk_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`id`, `fk_course`, `fk_user`) VALUES
+(25, 487652, 1),
+(26, 613482, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -102,7 +110,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `fname`, `lname`, `birth_date`, `profile_img`, `password`, `email`, `address`, `phone_number`, `status`) VALUES
-(1, 'Gangarig', 'Nyamsuren', '2022-12-13', '639830ae82be3.jpg', 'ae7dece7337e7bee49dda595e5bcd94f48f2da0b2e306926cec0868435e5150f', 'enkhmurun@gmail.com', '151b/1/12 Leopoldauer straße', '2147483647', 'STUDENT');
+(1, 'Gangarig', 'Nyamsurenghjkghjk', '2022-12-13', '6399596099bae.jpg', 'ae7dece7337e7bee49dda595e5bcd94f48f2da0b2e306926cec0868435e5150f', 'enkhmurun@gmail.com', '151b/1/12 Leopoldauer straße', '2147483647', 'trainer'),
+(3, 'Gangarig', 'Nyamsuren', '2022-12-04', 'noimage.png', '97bb101f9ecf31ffd3788d77c1a02c431c1607e8168aaa53e38a89d445324428', 'enkhmasdfasdfurasdfun@gmail.com', '151b/1/12 Leopoldauer straße', '2147483647', 'STUDENT'),
+(4, 'Gangarig', 'Nyamsuren', '2022-12-04', 'noimage.png', '421c76d77563afa1914846b010bd164f395bd34c2102e5e99e0cb9cf173c1d87', 'enkhmasdfasdfasdfurasdfun@gmail.com', '151b/1/12 Leopoldauer straße', '2147483647', 'STUDENT'),
+(8, 'Gangarig', 'Nyamsuren', '2022-12-01', 'noimage.png', '932f3c1b56257ce8539ac269d7aab42550dacf8818d075f0bdf1990562aae3ef', 'enkhmurun@gmail.comiuh', '151b/1/12 Leopoldauer straße', '2147483647', 'trainer');
 
 --
 -- Indexes for dumped tables
@@ -150,19 +161,19 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `registration_course`
 --
 ALTER TABLE `registration_course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -172,15 +183,15 @@ ALTER TABLE `user`
 -- Constraints for table `registration_course`
 --
 ALTER TABLE `registration_course`
-  ADD CONSTRAINT `registration_course_ibfk_1` FOREIGN KEY (`fk_user`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `registration_course_ibfk_2` FOREIGN KEY (`fk_course`) REFERENCES `courses` (`id`);
+  ADD CONSTRAINT `registration_course_ibfk_2` FOREIGN KEY (`fk_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `registration_course_ibfk_3` FOREIGN KEY (`fk_course`) REFERENCES `courses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `reservations`
 --
 ALTER TABLE `reservations`
-  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`fk_course`) REFERENCES `courses` (`id`),
-  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`fk_user`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`fk_course`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`fk_user`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

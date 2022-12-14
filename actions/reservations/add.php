@@ -8,35 +8,29 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
     header("Location: actions/components/login.php");
     exit;
 }
-//if session user exist it shouldn't access dashboard.php
-if (isset($_SESSION['status']) == 'user') {
-    header("Location: ../../profile.php");
-    exit;
-}
-if (isset($_SESSION['status']) == 'trainer') {
-    header("Location: ../../trainer.php");
-    exit;
-}
-//the GET method will show the info from the user to be deleted
-if ($_GET['id']) {
-    $id = $_GET['id'];
-    $sql = "SELECT * FROM reservations WHERE id = {$id}";
-    $result = mysqli_query($connect, $sql);
-    $data = mysqli_fetch_assoc($result);
-    $fk_user = $data['fk_user'];
-    $fk_course = $data['fk_course'];
-  }
+
 
 $list ='';  
 
+//the GET method will show the info from the user to be deleted
+if ($_GET['id']) {
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM courses WHERE id = {$id}";
+    $result = mysqli_query($connect, $sql);
+    $data = mysqli_fetch_assoc($result);
+    $fk_user = $_SESSION['user'];
+    $fk_course = $data['id'];
+}
+
   //the POST method will delete the user permanently
     if ($_POST) {
-        $id = $_POST['id'];
-        $query = "SELECT fk_course FROM registration_course WHERE fk_user='$fk_user'";
+        $fk_course = $_POST['id'];
+        $fk_user = $_SESSION['user'];
+        $query = "SELECT fk_course FROM reservations WHERE id='$fk_user'";
         $res = mysqli_query($link, $query);
         $data = mysqli_fetch_assoc($res);
         if( isset($data['fk_course']) != $fk_course ){
-        $sql = "INSERT INTO registration_course (fk_course , fk_user )VALUES ('$fk_course' , '$fk_user')";
+        $sql = "INSERT INTO reservations ( fk_user , fk_course )VALUES ( '$fk_user' , '$fk_course')";
         }
         if ($connect->query($sql) === TRUE) {
             $class = "alert dark-success";
