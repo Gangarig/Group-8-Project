@@ -541,6 +541,10 @@ TRAINER CARDS STYLING ENDS HERE */
   color: #242423;
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
+  padding-left: 10px;
+}
+.flow p {
+  padding-left: 10px;
 }
 .auto-grid {
   display: grid;
@@ -802,6 +806,7 @@ TRAINER CARDS STYLING ENDS HERE */
   padding: 10px;
   background-color: #333533;
   color: #ffffff;
+  margin-bottom: 50px;
 }
 #back img {
   padding: 20px;

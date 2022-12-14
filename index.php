@@ -162,9 +162,7 @@ if (isset($_SESSION["status"])) {
   <article class="flow">
     <h1>Our Students</h1>
     <p>
-      Here comes the review text. Lorem ipsum dolor sit, amet consectetur
-      adipisicing elit. Quos, blanditiis! Lorem ipsum dolor sit, amet
-      consectetur adipisicing elit. Eius, nobis.
+    Here are some of the most recent from individuals who attended this course:
     </p>
     <div class="team">
       <ul class="auto-grid" role="list">
