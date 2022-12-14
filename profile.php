@@ -10,14 +10,10 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
     exit;
 }
 // if admin will redirect to dashboard
-if (isset($_SESSION['admin']) == 'admin') {
+if (isset($_SESSION['status']) == 'admin') {
     header("Location: dashboard.php");
     exit;
 }
-
-if (isset($_SESSION["status"])) {
-    $role = $_SESSION['status'];
-  }
 
 // select logged-in users details - procedural style
 $res = mysqli_query($link, "SELECT * FROM user WHERE id=" . $_SESSION['user']);
