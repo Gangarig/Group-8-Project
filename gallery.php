@@ -1,0 +1,100 @@
+<?php
+session_start();
+require_once './actions/components/db_connect.php';
+require_once './actions/components/navbar.php';
+require_once './actions/components/footer.php';
+
+if (isset($_SESSION["status"])) {
+  $role = $_SESSION['status'];
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <title>First Aid Courses</title>
+</head>
+
+<body>
+  <!-- Header & Navbar start -->
+  <!-- This variable comes from the navbar.php in components -->
+  <?= $navbar ?>
+  <!-- Header & Navbar end -->
+
+  <div id="banner"></div>
+  
+  <!-- Gallery start-->
+ <!-- Filter -->
+<div class="title-gallery">First Aid Gallery</div>
+
+<ul class="gallery filter gallery zoom">
+<li>
+     <a href="./images/2.jpg">
+      <img src="./images/1.jpg" alt="">
+    </a>
+  </li>
+  
+  <li>
+     <a href="./images/2.jpg">
+      <img src="./images/2.jpg" alt="">
+    </a>
+  </li>
+  
+  <li>
+    <a href="./images/3.jpg">
+      <img src="./images/3.jpg" alt="">
+    </a>
+  </li>
+  
+  <li>
+    <a href="./images/4.jpg">
+      <img src="./images/4.jpg" alt="">
+    </a>
+  </li>
+  
+  <li>
+     <a href="./images/5.jpg">
+      <img src="./images/5.jpg" alt="">
+    </a>
+  </li>
+  
+  <li class="wide">
+    <a href="./images/6.jpg">
+      <img src="./images/6.jpg" alt="">
+    </a>
+  </li>
+
+  <a href="./images/9.jpg">
+      <img src="./images/9.jpg" alt="">
+    </a>
+  </li>
+
+  <li class="wide">
+    <a href="./images/7.jpg">
+      <img src="./images/7.jpg" alt="">
+    </a>
+  </li>
+
+  <li class="wide">
+    <a href="./images/8.jpg">
+      <img src="./images/8.jpg" alt="">
+    </a>
+  </li>
+</ul>
+
+ 
+  <!-- Gallery end-->
+
+
+
+  <!-- Footer start -->
+  <!-- This variable comes from the footer.php in components -->
+  <?= $footer ?>
+  <!-- Footer end -->
