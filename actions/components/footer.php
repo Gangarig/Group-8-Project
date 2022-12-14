@@ -20,11 +20,11 @@ $footer = '
                 <div class="second">
                     <h4>Navigate</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Registration course</a></li>
-                        <li><a href="#">Reservations</a></li>
-                        <li><a href="#">Students</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="courses.php#courses">Courses</a></li>
+                        <li><a href="about.php#students">Students</a></li>
+                        <li><a href="contact.php#form" class="nav-link">Contact</a></li>
+                        <li><a href="about.php#back" class="nav-link">About us</a></li>
                     </ul>
                 </div>
             </div>
