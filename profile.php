@@ -39,15 +39,24 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     <div id="banner"></div>
 
     <div class="m-5">
-        <img src="./actions/images/<?php echo $row['profile_img'] ?>" class="img-fluid w-25" alt="profile.img">
-        <p>Name : <?php echo $row['fname'] . ' ' . $row['lname'] ?></p>
-        <p>Birth Date : <?php echo $row['birth_date'] ?></p>
-        <p>Email : <?php echo $row['email'] ?></p>
-        <p>Address : <?php echo $row['address'] ?></p>
-        <p>Phone Number : <?php echo $row['phone_number'] ?></p>
-        <p>Profile status : <?php echo $row['status'] ?></p>
+        <div class="container">
+            <h2>Hey, <?php echo $row['fname']?>!</h2>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-3">
+                    <img style="height: 250px; width: 100% !important;" align="right" src="./actions/images/<?php echo $row['profile_img'] ?>" class="img-fluid w-25" alt="profile.img">
+                </div>
+                <div class="col-9">
+                    <p style="font-family: Roboto Condensed;">Name : <?php echo $row['fname'] . ' ' . $row['lname'] ?></p>
+                    <p style="font-family: Roboto Condensed;">Birth Date : <?php echo $row['birth_date'] ?></p>
+                    <p style="font-family: Roboto Condensed;">Email : <?php echo $row['email'] ?></p>
+                    <p style="font-family: Roboto Condensed;">Address : <?php echo $row['address'] ?></p>
+                    <p style="font-family: Roboto Condensed;">Phone Number : <?php echo $row['phone_number'] ?></p>
+                    <p style="font-family: Roboto Condensed;">Profile status : <?php echo $row['status'] ?></p>
+                    <a class="btn btn-dark" href="actions/login/Edit.php?id=<?php echo $_SESSION['user'] ?>">Edit Profile</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <a class=" m-5 btn btn-dark" href="actions/login/Edit.php?id=<?php echo $_SESSION['user'] ?>">Edit Profile</a>
 
     <!-- Footer start -->
     <!-- This variable comes from the footer.php in components -->
