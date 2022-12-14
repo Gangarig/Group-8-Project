@@ -4,6 +4,7 @@ require_once('../components/boot.php');
 require_once('../components/db_connect.php');
 require_once('../components/navbar.php');
 require_once('../components/footer.php');
+
 if (isset($_SESSION['user']) != "") {
     header("Location: ../../index.php"); // redirects to index.php
 }

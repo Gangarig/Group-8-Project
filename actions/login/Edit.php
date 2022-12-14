@@ -1,8 +1,9 @@
 <?php
 session_start();
-require_once '../components/boot.php';
-require_once '../components/db_connect.php';
-require_once '../components/file_upload.php';
+require_once('../components/boot.php');
+require_once('../components/db_connect.php');
+require_once('../components/file_upload.php');
+
 // if session is not set this will redirect to login page
 if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
     header("Location: ../../index.php");

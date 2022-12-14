@@ -1,7 +1,8 @@
 <?php
 session_start();
-require_once '../components/boot.php';
-require_once '../components/db_connect.php';
+require_once('../components/boot.php');
+require_once('../components/db_connect.php');
+
 // it will never let you open  (login) page if session is set
 if (isset($_SESSION['user'])) {
     header("Location: ../../profile.php");

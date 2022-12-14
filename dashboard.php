@@ -1,8 +1,8 @@
 <?php 
-session_start ();
+session_start();
+require_once('./actions/components/boot.php');
+require_once('./actions/components/db_connect.php');
 
-require_once ('./actions/components/boot.php');
-require_once ('./actions/components/db_connect.php');
 // if session is not set this will redirect to login page
 if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
     header("Location: actions/components/login.php");

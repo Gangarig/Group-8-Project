@@ -4,6 +4,7 @@ require_once('./actions/components/boot.php');
 require_once('./actions/components/db_connect.php');
 require_once('./actions/components/navbar.php');
 require_once('./actions/components/footer.php');
+
 // if session is not set this will redirect to login page
 if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
     header("Location: index.php");

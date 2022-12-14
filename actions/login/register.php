@@ -1,14 +1,15 @@
 <?php
 session_start(); // start a new session or continues the previous
+require_once('../components/boot.php');
+require_once('../components/db_connect.php');
+require_once ('../components/file_upload.php');
+
 if (isset($_SESSION['user']) != "") {
     header("Location: home.php"); // redirects to home.php
 }
 if (isset($_SESSION['admin']) != "") {
     header("Location: dashboard.php"); // redirects to home.php
 }
-require_once '../components/db_connect.php';
-require_once '../components/file_upload.php';
-require_once '../components/boot.php';
 
 $error = false;
 $fname = $lname = $birth_date = $email = $address = $password = $picture = $phone_number = $address =  '';
