@@ -34,7 +34,7 @@ require_once './actions/components/footer.php';
     <div id="banner"></div>
 
     <!-- Main start -->
-    <div class="cards-course">
+    <div class="cards-course mt-5">
     <?php
       if(isset($_SESSION["status"])){
         $role= $_SESSION['status'];
@@ -44,25 +44,30 @@ require_once './actions/components/footer.php';
       }
       $result = mysqli_query($link, "SELECT * FROM courses");
 
-      while($row = mysqli_fetch_array($result)) { 
+      while ($row = mysqli_fetch_array($result)) {
+        if (isset($role)) {
+          $price = '';
+          if ($role == 'STUDENT')
+            $price = $row['price_student'];
+          elseif ($role == 'PRIVATE')
+            $price = $row['price_private'];
+          elseif ($role == 'BUSINESS')
+            $price = $row['price_business'];
+        } else $price = 'Please login';
       ?>
-      <div class="card-course card-1">
-        <div class="card__icon bi bi-currency-euro">
-          <?php 
-            if(isset($role)){ ?>
-          <span><b><?= $role === 'PRIVATE' ? $row['price_private'] : ($role === 'BUSINESS' ? $row['price_business'] : ($role === 'STUDENT' ? $row['price_student'] : 'Please login'))?></b></span>
-          <?php } ?>
+        <div class="card-course card-1">
+          <div class="card__icon bi bi-currency-euro">
+            <span><b><?= $price ?></b></span>
+          </div>
+          <p class="card__exit bi bi-alarm"><?= $row['duration'] ?></p>
+          <h2 class="card__title"><?= $row['name'] ?></h2>
+          <p class="card_info"><?= $row['description'] ?></p>
+          <p class="card__apply">
+            <?php if (isset($role)) { ?><a class="card__link btn btn-secondary" href="#">Apply Now <i class="fas fa-arrow-right"></i></a><?php } ?>
+          </p>
         </div>
-        <p class="card__exit bi bi-alarm"><?= $row['duration']?></p>
-        <h2 class="card__title"><?= $row['name']?></h2>
-        <p class="card_info"><?= $row['description']?></p>
-        <p class="card__apply">
-          <?php if(isset($role)){ ?><a class="card__link btn btn-secondary" href="#">Apply Now <i class="fas fa-arrow-right"></i></a><?php } ?>
-        </p>
-        
-      </div>
       <?php
-        }
+      }
       ?>
     </div>
 
