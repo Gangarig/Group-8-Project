@@ -3,7 +3,7 @@
 if (isset($_SESSION["status"])) {
     $profile_buttons = '
     <div class="my-btn ms-xl-auto">
-        <a href="profile.php" class="nav-link">My Profile</a>
+        <a href="profile.php#profile" class="nav-link">My Profile</a>
     </div>
     <div class="my-btn">
         <a href="actions/login/logout.php?logout" class="nav-link">Logout</a>
@@ -53,23 +53,17 @@ $navbar = '
                         <a href="index.php" class="nav-link" id="expanded-home-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="courses.php" class="nav-link">Courses</a>
+                        <a href="courses.php#courses" class="nav-link">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Registration course</a>
+                        <a href="about.php#students" class="nav-link">Students</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Reservations</a>
+                        <a href="contact.php#form" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Students</a>
+                        <a href="about.php#back" class="nav-link">About us</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="contact.php" class="nav-link">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="" class="nav-link">About us</a>
-                  </li>
                 </ul>
                 <!-- Here the buttons from the check at the top of the page are printed -->
                 ' . $profile_buttons . '

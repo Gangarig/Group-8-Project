@@ -112,7 +112,7 @@ mysqli_close($connect);
         <input type="hidden" name="profile_img" value="<?php echo $profile_img ?>" />
         <input type="hidden" name="id" value="<?php echo $data['id'] ?>" />
         <button type="submit" class="btn btn-block btn-dark" name="submit">save the changes</button>
-        <a href="<?php echo $backBtn ?>"><button class="btn btn-dark" type="button">Back</button></a>../
+        <a href="<?php echo $backBtn ?>"><button class="btn btn-dark" type="button">Back</button></a>
         </form>
 </div>
        

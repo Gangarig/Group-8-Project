@@ -34,7 +34,7 @@ require_once './actions/components/footer.php';
     <div id="banner"></div>
 
     <!-- Main start -->
-    <div class="cards-course mt-5">
+    <div class="cards-course mt-5" id="courses">
     <?php
       if(isset($_SESSION["status"])){
         $role= $_SESSION['status'];
