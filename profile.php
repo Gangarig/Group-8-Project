@@ -51,7 +51,7 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
                     <p style="font-family: Roboto Condensed;font-size: 20px;">Birth Date : <?php echo $row['birth_date'] ?></p>
                     <p style="font-family: Roboto Condensed;font-size: 20px;">Email : <?php echo $row['email'] ?></p>
                 </div>
-                <div class="col-4" style="margin-top: 30px;>
+                <div class="col-4" style="margin-top: 30px;">
                     <p style="font-family: Roboto Condensed;font-size: 20px;">Address : <?php echo $row['address'] ?></p>
                     <p style="font-family: Roboto Condensed;font-size: 20px;">Phone Number : <?php echo $row['phone_number'] ?></p>
                     <p style="font-family: Roboto Condensed;font-size: 20px;">Profile status : <?php echo $row['status'] ?></p>
