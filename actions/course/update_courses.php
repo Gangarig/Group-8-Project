@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-<h2> Update course </h2>
+<?php
+session_start();
+require_once('../components/boot.php');
+require_once('../components/db_connect.php');
 
-<?php 
-session_start ();
-
-require_once ('../components/boot.php');
-require_once ('../components/db_connect.php');
 // if session is not set this will redirect to login page
-if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
-    header("Location: actions/components/login.php");
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user']) && !isset($_SESSION['trainer'])) {
+    header("Location: ../login/login.php");
     exit;
 }
 //if session user exist it shouldn't access dashboard.php
-if (isset($_SESSION['status']) == 'user') {
+if (isset($_SESSION['status'])) {
     header("Location: ../../profile.php");
     exit;
 }
-if (isset($_SESSION['status']) == 'trainer') {
+if (isset($_SESSION['trainer'])) {
     header("Location: ../../trainer.php");
     exit;
 }
@@ -29,6 +21,14 @@ if (isset($_SESSION['status']) == 'trainer') {
 $result = mysqli_query($link, "SELECT * FROM courses WHERE id='" . $_GET['id']  . "'");
 $row = mysqli_fetch_array($result);
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<h2> Update course </h2>
 
 <form method="post" action="/Group-8-Project/actions/c_update.php" enctype="multipart/form-data">
   <label for="id">ID:</label><br>

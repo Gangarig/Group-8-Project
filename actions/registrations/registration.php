@@ -2,9 +2,12 @@
 session_start();
 require_once('../components/boot.php');
 require_once('../components/db_connect.php');
-require_once('../components/navbar.php');
-require_once('../components/footer.php');
 
+// if session is not set this will redirect to login page
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user']) && !isset($_SESSION['trainer'])) {
+    header("Location: ../login/login.php");
+    exit;
+}
 if (isset($_SESSION['user']) != "") {
     header("Location: ../../index.php"); // redirects to index.php
 }

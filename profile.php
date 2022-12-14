@@ -7,12 +7,17 @@ require_once('./actions/components/footer.php');
 
 // if session is not set this will redirect to login page
 if (!isset($_SESSION['admin']) && !isset($_SESSION['user']) && !isset($_SESSION['trainer'])) {
-    header("Location: index.php");
+    header("Location: actions/login/login.php");
     exit;
 }
 // if admin will redirect to dashboard
 if (isset($_SESSION['admin'])) {
     header("Location: dashboard.php");
+    exit;
+}
+// if trainer will redirect to trainer
+if (isset($_SESSION['trainer'])) {
+    header("Location: trainer.php");
     exit;
 }
 

@@ -2,13 +2,18 @@
 session_start(); // start a new session or continues the previous
 require_once('../components/boot.php');
 require_once('../components/db_connect.php');
-require_once ('../components/file_upload.php');
+require_once('../components/file_upload.php');
 
-if (isset($_SESSION['user']) != "") {
-    header("Location: home.php"); // redirects to home.php
+//if session user exist it shouldn't access register.php
+if (isset($_SESSION['user'])) {
+    header("Location: ../../index.php");
 }
-if (isset($_SESSION['admin']) != "") {
-    header("Location: dashboard.php"); // redirects to home.php
+if (isset($_SESSION['trainer'])) {
+    header("Location: ../../trainer.php");
+    exit;
+}
+if (isset($_SESSION['admin'])) {
+    header("Location: ../../dashboard.php");
 }
 
 $error = false;

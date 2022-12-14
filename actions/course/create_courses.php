@@ -1,3 +1,23 @@
+<?php
+session_start();
+require_once('../components/boot.php');
+require_once('../components/db_connect.php');
+
+// if session is not set this will redirect to login page
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user']) && !isset($_SESSION['trainer'])) {
+  header("Location: ../login/login.php");
+  exit;
+}
+//if session user exist it shouldn't access dashboard.php
+if (isset($_SESSION['status'])) {
+  header("Location: ../../profile.php");
+  exit;
+}
+if (isset($_SESSION['trainer'])) {
+  header("Location: ../../trainer.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +25,6 @@
 </head>
 <body>
 <h2> Create course </h2>
-
-<?php
-
-require_once '../role_check.php';
-?>
 
 <form method="post" action="/Group-8-Project/actions/c_create.php" enctype="multipart/form-data">
   <label for="id">ID:</label><br>

@@ -5,8 +5,8 @@ require_once('../components/db_connect.php');
 require_once('../components/file_upload.php');
 
 // if session is not set this will redirect to login page
-if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
-    header("Location: ../../index.php");
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user']) && !isset($_SESSION['trainer'])) {
+    header("Location: login.php");
     exit;
 }
 $backBtn = '';
