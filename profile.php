@@ -39,7 +39,7 @@ $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     <div id="banner"></div>
 
     <div class="m-5">
-        <div class="container">
+        <div id="profile" class="container">
             <h2>Hey, <?php echo $row['fname']?>!</h2>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-3">
