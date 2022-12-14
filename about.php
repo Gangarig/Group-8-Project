@@ -21,6 +21,7 @@ require_once './actions/components/footer.php';
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css" />
     <style>
         .contact-form {
@@ -40,14 +41,33 @@ require_once './actions/components/footer.php';
     <div id="banner"></div>
 
     <!-- Courses start -->
+<<<<<<< HEAD
     <div id="back">
     <img src="images/profile1.jpg" align="right" class="responsive"/><p>With over 20 years experience, Accredited First Aid Courses has been a pioneer among the Independent First Aid Training Providers.
     With a long history of looking after the needs of Victorian’s and their Occupational Safety, Accredited First Aid Course continues to maintain high training Standards with a clear focus on client needs.
     <br></p>
+=======
+    <div class="back">
+      <div class="container" style="margin-top: 30px;">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-4">
+          <div class="card mb-4">
+                        <div class="card-body text-center">
+          <img src="images/profile1.jpg" align="right" class="responsive"/>
+                        </div>
+          </div>
+          </div>
+          <div class="col-6">
+            <h2>Who am I?</h2>
+          <p style="font-family: Roboto Condensed;">With over 20 years experience, Accredited First Aid Courses has been a pioneer among the Independent First Aid Training Providers.
+    With a long history of looking after the needs of Victorian’s and their Occupational Safety, Accredited First Aid Course continues to maintain high training Standards with a clear focus on client needs. <br><br>
+>>>>>>> 185bafe02990398b56b09508578de4b40f144f6b
     
     <p>Being a smaller company gives Accredited First Aid Courses the real opportunity to be <b><em> “hands on”</em></b> with the needs of all their clients: an attribute that has seen the company flourish over the years.
     The focus at Accredited First Aid Courses is to train clients in a friendly environment where all learners feel comfortable, regardless of background or physical capabilities. 
     Trainers strive to bring out the best in all participants with clear instruction, practical application of skills and through role play and scenario’s.
+<<<<<<< HEAD
     It is the aim that all people trained by Accredited First Aid Courses will walk away with the confidence that they can perform their First Aid Duties to the utmost of their personal ability.
     Underlying all of Accredited First Aid Courses training is the philosophy of care and humanity.</p> 
     <p>In 1999, Rose Warner of Lower Austria attended a First Aid Class while she was expecting her first child. <em>“I was worried that if something happened to my baby I wouldn’t know what to do.”</em> 
@@ -56,6 +76,20 @@ require_once './actions/components/footer.php';
     <p>A nationally recognised training organisation, Accredited First Aid Courses has now been operating for over 20 years. It has become highly respected in the First Aid Industry and delivers its courses to a vast range of Business and organizations ranging from Day Care Centres, Personal Trainers, Massage Schools, School teachers, Students, Office Staff, Mothers groups and the list goes on. 
     In fact there is no industry that is exempt from learning First Aid especially in light of stringent Occupational Health and Safety laws. 
     <em>“In the workforce or at home, we all have a Duty of Care to look after the people in our lives,”</em>  adds Rose.</p>
+=======
+    It is the aim that all people trained by Accredited First Aid Courses will walk away with the confidence that they can perform their First Aid Duties to the utmost of their personal ability. <br><br>
+    Underlying all of Accredited First Aid Courses training is the philosophy of care and humanity.
+    In 1999, Rose Warner of Lower Austria attended a First Aid Class while she was expecting her first child. “I was worried that if something happened to my baby I wouldn’t know what to do.”
+    Rose developed an interest in First Aid which grew stronger by the day so she booked herself into an Advanced First Aid class to improve her knowledge and skills. <br><br> The more Rose spoke to people at work and home about what she was learning, the more she realised how little most of them knew of what to do in a First Aid emergency.
+    “I was constantly being told that I should teach First Aid as I had a strong passion for it and had a way of stimulating other people’s interest. <br><br> It was then that I decided to take up further study and start up my own training company, Accredited First Aid Courses.
+    A nationally recognised training organisation, Accredited First Aid Courses has now been operating for over 20 years. It has become highly respected in the First Aid Industry and delivers its courses to a vast range of Business and organizations ranging from Day Care Centres, Personal Trainers, Massage Schools, School teachers, Students, Office Staff, Mothers groups and the list goes on. 
+    In fact there is no industry that is exempt from learning First Aid especially in light of stringent Occupational Health and Safety laws. 
+    “In the workforce or at home, we all have a Duty of Care to look after the people in our lives,”  adds Rose.</p>
+          </div>
+        </div>
+      </div>
+    
+>>>>>>> 185bafe02990398b56b09508578de4b40f144f6b
   </div>
     <!-- Review section end -->
 
