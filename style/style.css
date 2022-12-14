@@ -53,9 +53,9 @@ body {
   text-decoration: none;
 }
 
-.headcont:last-of-type {
+/* .headcont:last-of-type {
   margin-left: 60px;
-}
+} */
 
 .headCont img {
   position: absolute;
