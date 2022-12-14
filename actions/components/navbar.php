@@ -62,8 +62,8 @@ $navbar = '
                         <a href="contact.php#form" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item">
-                    <a href="about.php#back" class="nav-link">About us</a>
-                  </li>
+                        <a href="about.php#back" class="nav-link">About us</a>
+                    </li>
                 </ul>
                 <!-- Here the buttons from the check at the top of the page are printed -->
                 ' . $profile_buttons . '
