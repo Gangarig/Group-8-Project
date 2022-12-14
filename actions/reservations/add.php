@@ -1,10 +1,10 @@
 <?php 
 session_start ();
-
 require_once ('../components/boot.php');
 require_once ('../components/db_connect.php');
+
 // if session is not set this will redirect to login page
-if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user']) && !isset($_SESSION['trainer'])){
     header("Location: actions/components/login.php");
     exit;
 }

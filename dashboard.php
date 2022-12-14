@@ -4,16 +4,16 @@ require_once('./actions/components/boot.php');
 require_once('./actions/components/db_connect.php');
 
 // if session is not set this will redirect to login page
-if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user']) && !isset($_SESSION['trainer'])) {
     header("Location: actions/components/login.php");
     exit;
 }
 //if session user exist it shouldn't access dashboard.php
-if (isset($_SESSION['status']) == 'user') {
+if (isset($_SESSION['status'])) {
     header("Location: profile.php");
     exit;
 }
-if (isset($_SESSION['status']) == 'trainer') {
+if (isset($_SESSION['trainer'])) {
     header("Location: trainer.php");
     exit;
 }
