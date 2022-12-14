@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2022 at 09:57 AM
+-- Generation Time: Dec 14, 2022 at 12:46 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -93,7 +93,7 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `phone_number` int(11) NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -102,7 +102,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `fname`, `lname`, `birth_date`, `profile_img`, `password`, `email`, `address`, `phone_number`, `status`) VALUES
-(1, 'Gangarig', 'Nyamsuren', '2022-12-13', '639830ae82be3.jpg', 'ae7dece7337e7bee49dda595e5bcd94f48f2da0b2e306926cec0868435e5150f', 'enkhmurun@gmail.com', '151b/1/12 Leopoldauer straße', 2147483647, 'STUDENT');
+(1, 'Gangarig', 'Nyamsuren', '2022-12-13', '639830ae82be3.jpg', 'ae7dece7337e7bee49dda595e5bcd94f48f2da0b2e306926cec0868435e5150f', 'enkhmurun@gmail.com', '151b/1/12 Leopoldauer straße', '2147483647', 'STUDENT');
 
 --
 -- Indexes for dumped tables
