@@ -3,7 +3,7 @@
 if (isset($_SESSION["status"])) {
     $profile_buttons = '
     <div class="my-btn ms-xl-auto">
-        <a href="profile.php" class="nav-link">My Profile</a>
+        <a href="profile.php#profile" class="nav-link">My Profile</a>
     </div>
     <div class="my-btn">
         <a href="actions/login/logout.php?logout" class="nav-link">Logout</a>
