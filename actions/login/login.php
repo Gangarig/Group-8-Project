@@ -56,7 +56,7 @@ if(isset($_POST['login'])){
             if($row['status'] == 'admin') {
                 $_SESSION['admin'] = $row['id'];
                 header("Location: ../../dashboard.php");
-            } else if ($row['status'] == 'trainer') {
+            } elseif ($row['status'] == 'trainer') {
                 $_SESSION['trainer'] = $row['id'];
                 header("Location: ../../trainer.php");
             } else {
