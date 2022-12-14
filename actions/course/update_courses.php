@@ -6,13 +6,27 @@
 <body>
 <h2> Update course </h2>
 
-<?php
+<?php 
+session_start ();
 
-require_once 'actions/role_check.php';
-require_once 'actions/components/db_connect.php';
-$name = $_GET['name'];
+require_once ('../components/boot.php');
+require_once ('../components/db_connect.php');
+// if session is not set this will redirect to login page
+if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
+    header("Location: actions/components/login.php");
+    exit;
+}
+//if session user exist it shouldn't access dashboard.php
+if (isset($_SESSION['status']) == 'user') {
+    header("Location: ../../profile.php");
+    exit;
+}
+if (isset($_SESSION['status']) == 'trainer') {
+    header("Location: ../../trainer.php");
+    exit;
+}
 
-$result = mysqli_query($link, "SELECT * FROM courses WHERE name='" . $name . "'");
+$result = mysqli_query($link, "SELECT * FROM courses WHERE id='" . $_GET['id']  . "'");
 $row = mysqli_fetch_array($result);
 ?>
 
@@ -42,7 +56,7 @@ $row = mysqli_fetch_array($result);
   <input type="text" name="image" value="<?php echo $row['image'] ?>"/><br/>
   <label for="description">Description:</label><br>
   <input type="text" id="description" name="description" value="<?=$row['description']; ?>"><br><br>
-  <input type="text" style="display: none;" id="name" name="name" value="<?=$row['name']; ?>"><br>
+  <input type="text" style="display: none;" id="id" name="id" value="<?=$row['id']; ?>"><br>
   <input type="submit" value="Submit">
 </form> 
 

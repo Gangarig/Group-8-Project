@@ -36,8 +36,8 @@ if (isset($_SESSION['trainer'])) {
             <a  class="btn btn-dark"  href="./actions/user_list/accounts.php">User list</a>
             <a  class="btn btn-dark"  href="actions\reservations\reservation.php">Reservations</a>
             <a  class="btn btn-dark"  href="actions\registrations\registration.php">Registrations</a>
-            <a  class="btn btn-dark"  href="./actions/courses.php">Course list</a>
-            <a class="btn btn-dark"  href="./actions/user_list/trainers.php">Trainers</a>
+            <a  class="btn btn-dark"  href="./actions/course/courses_list.php">Course list</a>
+            <a class="btn btn-dark"  href="./actions/trainer.php">Trainers</a>
             <a class="btn btn-dark"  href="./actions/login/logout.php?logout">Log out</a>
         </div>
         
