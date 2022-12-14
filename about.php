@@ -60,7 +60,7 @@ require_once './actions/components/footer.php';
     <!-- Review section end -->
 
     <!-- Students section start -->
-    <article class="flow">
+    <article class="flow" id="students">
       <h1>Our Students</h1>
       <p>
       Here are some of the most recent from individuals who attended this course:

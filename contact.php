@@ -39,7 +39,7 @@ require_once './actions/components/footer.php';
 
     <div id="banner"></div>
 
-    <form class="contact-form" method="post" action="/Group-8-Project/actions/contact_create.php" enctype="multipart/form-data">
+    <form class="contact-form" id="form" method="post" action="/Group-8-Project/actions/contact_create.php" enctype="multipart/form-data">
       <label for="name">Name:</label><br>
       <input class="form-control" type="text" id="name" name="name" value=""><br><br>
       <label for="surname">Surname:</label><br>
