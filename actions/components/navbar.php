@@ -2,7 +2,7 @@
 // Here we check if the user is logged in. If yes the navbar will have the buttons My Profile and Logout. If not it will have the buttons Login and Register
 if (isset($_SESSION["status"])) {
     $profile_buttons = '
-    <div class="my-btn ms-lg-auto">
+    <div class="my-btn ms-xl-auto">
         <a href="profile.php" class="nav-link">My Profile</a>
     </div>
     <div class="my-btn">
@@ -10,7 +10,7 @@ if (isset($_SESSION["status"])) {
     </div>
     ';
 } else $profile_buttons = '
-    <div class="my-btn ms-lg-auto">
+    <div class="my-btn ms-xl-auto">
         <a href="actions/login/login.php" class="nav-link">Login</a>
     </div>
     <div class="my-btn">
@@ -28,7 +28,7 @@ $navbar = '
             <a href="index.php">
                 <img class="logo" src="images/first_aid_navbar-logo.png" alt="Logo" />
             </a>
-            <div class="d-block d-lg-inline-flex ms-0 ms-lg-auto">
+            <div class="d-block d-xl-inline-flex ms-0 ms-xl-auto">
                 <div class="headCont bi bi-telephone-fill">
                     Call us for free:<br /><a href="tel:+43 1 645 645">+43 1 645 645</a>
                 </div>
@@ -41,7 +41,7 @@ $navbar = '
     <!-- Header end -->
 
     <!-- Navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-top">
+    <nav class="navbar navbar-expand-xl navbar-light navbar-top">
         <div class="container nav-wrapper p-0">
             <a href="index.php" class="nav-link" id="collapsed-home-link">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">

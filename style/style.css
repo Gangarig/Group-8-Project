@@ -81,7 +81,7 @@ HEADER STYLING ENDS HERE */
 }
 
 /* Adds margin to the top of the navbar on lower resolutions so that the phone & email has space to go */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .navbar-top {
     margin-top: 5rem;
   }
@@ -147,7 +147,7 @@ HEADER STYLING ENDS HERE */
 }
 
 /* Hides expanded home link and replaces it with the collapsed one (so that it is not duplicated in the toggler list) */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   #expanded-home-link {
     display: none;
   }
@@ -177,7 +177,7 @@ HEADER STYLING ENDS HERE */
 }
 
 /* Makes login & register buttons smaller when collapsed */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .my-btn {
     margin-bottom: 8px;
     text-align: center;
