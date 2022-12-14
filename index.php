@@ -82,7 +82,7 @@ if (isset($_SESSION["status"])) {
     <div class="card">
       <div class="img-wrapper"><img src="images/profile3.jpg" /></div>
       <div class="details">
-        <h3>Emily Mitchell</h3>
+        <h3>John Doe</h3>
         <h5>Trainer</h5>
       </div>
     </div>
