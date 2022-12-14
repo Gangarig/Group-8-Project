@@ -4,10 +4,6 @@ require_once('./actions/components/boot.php');
 require_once('./actions/components/db_connect.php');
 require_once('./actions/components/navbar.php');
 require_once('./actions/components/footer.php');
-
-if (isset($_SESSION["status"])) {
-  $role = $_SESSION['status'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +27,7 @@ if (isset($_SESSION["status"])) {
   
   <!-- Gallery start-->
  <!-- Filter -->
-<div class="title-gallery">First Aid Gallery</div>
+<div class="title-gallery" id="gallery">First Aid Gallery</div>
 
 <ul class="gallery filter gallery zoom">
 <li>
