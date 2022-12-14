@@ -159,7 +159,7 @@ if (isset($_SESSION["status"])) {
   <!-- Review section end -->
 
   <!-- Students section start -->
-  <article class="flow">
+  <!-- <article class="flow">
     <h1>Our Students</h1>
     <p>
     Here are some of the most recent from individuals who attended this course:
@@ -210,7 +210,7 @@ if (isset($_SESSION["status"])) {
         </li>
       </ul>
     </div>
-  </article>
+  </article> -->
   <!-- Students section end -->
 
   <!-- Footer start -->
