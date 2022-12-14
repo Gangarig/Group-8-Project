@@ -117,7 +117,7 @@ HEADER STYLING ENDS HERE */
 .navbar-light .navbar-nav .nav-link {
   font-family: sans-serif;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: capitalize;
   font-weight: 400;
   padding: 25px 20px;
@@ -796,4 +796,13 @@ TRAINER CARDS STYLING ENDS HERE */
   width: 100%;
   max-width: 250px;
   height: auto;
+}
+#back {
+  margin: 10px;
+  padding: 10px;
+  background-color: #333533;
+  color: #ffffff;
+}
+#back img {
+  padding: 20px;
 }

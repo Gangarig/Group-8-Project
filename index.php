@@ -70,9 +70,6 @@ if (isset($_SESSION["status"])) {
       <div class="details">
         <h3>Rose Warner</h3>
         <h5>Training Manager</h5>
-        <div class="social-icons">
-          <button type="button" class="btn btn-secondary">About me</button>
-        </div>
       </div>
     </div>
     <div class="card">
@@ -80,9 +77,6 @@ if (isset($_SESSION["status"])) {
       <div class="details">
         <h3>Emily Smith</h3>
         <h5>Lead Trainer</h5>
-        <div class=".about-me">
-          <button type="button" class="btn btn-secondary">About me</button>
-        </div>
       </div>
     </div>
     <div class="card">
@@ -90,9 +84,6 @@ if (isset($_SESSION["status"])) {
       <div class="details">
         <h3>Emily Mitchell</h3>
         <h5>Trainer</h5>
-        <div class="social-icons">
-          <button type="button" class="btn btn-secondary">About me</button>
-        </div>
       </div>
     </div>
   </div>

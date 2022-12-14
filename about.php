@@ -1,10 +1,8 @@
-<?php
+<?php 
 session_start();
 require_once './actions/components/db_connect.php';
-
-if (isset($_SESSION["status"])) {
-  $role = $_SESSION['status'];
-}
+require_once './actions/components/navbar.php';
+require_once './actions/components/footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,92 +22,40 @@ if (isset($_SESSION["status"])) {
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="style/style.css" />
+    <style>
+        .contact-form {
+            margin: 3rem;
+        }
+    </style>
     <title>First Aid Courses</title>
   </head>
 
   <body>
-    <section id="header">
-      <!-- Header start -->
-      <div class="header-top">
-        <div class="container d-flex justify-content-between flex-wrap">
-          <a href="">
-            <img class="logo" src="images/first_aid_navbar-logo.png" alt="" />
-          </a>
-          <div class="d-block d-lg-inline-flex ms-0 ms-lg-auto">
-            <div class="headCont bi bi-telephone-fill">
-              Call us for free:<br /><a href="tel:+43 1 645 645"
-                >+43 1 645 645</a
-              >
-            </div>
-            <div class="headCont bi bi-envelope-at-fill">
-              Send us an e-mail: <br /><a href="mailto:firstaidcourses@mail.com"
-                >firstaidcourses@mail.com</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Header end -->
 
-      <!-- Navbar start -->
-      <nav class="navbar navbar-expand-lg navbar-light navbar-top">
-        <div class="container nav-wrapper p-0">
-          <a href="" class="nav-link" id="collapsed-home-link">Home</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarToggler"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a href="" class="nav-link" id="expanded-home-link">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">Courses</a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">Registration course</a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">Reservations</a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">Students</a>
-              </li>
-            </ul>
-            <div class="my-btn ms-lg-auto">
-              <a href="actions/login/login.php" class="nav-link">Login</a>
-            </div>
-            <div class="my-btn">
-              <a href="actions/login/register.php" class="nav-link">Register</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <!-- Navbar end -->
-    </section>
+    <!-- Header & Navbar start -->
+    <!-- This variable comes from the navbar.php in components -->
+    <?= $navbar ?>
+    <!-- Header & Navbar end -->
+
     <div id="banner"></div>
 
     <!-- Courses start -->
-    <div class="back">
+    <div id="back">
     <img src="images/profile1.jpg" align="right" class="responsive"/><p>With over 20 years experience, Accredited First Aid Courses has been a pioneer among the Independent First Aid Training Providers.
-    With a long history of looking after the needs of Victorian’s and their Occupational Safety, Accredited First Aid Course continues to maintain high training Standards with a clear focus on client needs. <br>
+    With a long history of looking after the needs of Victorian’s and their Occupational Safety, Accredited First Aid Course continues to maintain high training Standards with a clear focus on client needs.
+    <br></p>
     
-    Being a smaller company gives Accredited First Aid Courses the real opportunity to be “hands on” with the needs of all their clients: an attribute that has seen the company flourish over the years.
+    <p>Being a smaller company gives Accredited First Aid Courses the real opportunity to be <b><em> “hands on”</em></b> with the needs of all their clients: an attribute that has seen the company flourish over the years.
     The focus at Accredited First Aid Courses is to train clients in a friendly environment where all learners feel comfortable, regardless of background or physical capabilities. 
     Trainers strive to bring out the best in all participants with clear instruction, practical application of skills and through role play and scenario’s.
-    It is the aim that all people trained by Accredited First Aid Courses will walk away with the confidence that they can perform their First Aid Duties to the utmost of their personal ability. <br>
-    Underlying all of Accredited First Aid Courses training is the philosophy of care and humanity.
-    In 1999, Rose Warner of Lower Austria attended a First Aid Class while she was expecting her first child. “I was worried that if something happened to my baby I wouldn’t know what to do.”
-    Rose developed an interest in First Aid which grew stronger by the day so she booked herself into an Advanced First Aid class to improve her knowledge and skills. <br> The more Rose spoke to people at work and home about what she was learning, the more she realised how little most of them knew of what to do in a First Aid emergency.
-    “I was constantly being told that I should teach First Aid as I had a strong passion for it and had a way of stimulating other people’s interest. <br> It was then that I decided to take up further study and start up my own training company, Accredited First Aid Courses.
-    A nationally recognised training organisation, Accredited First Aid Courses has now been operating for over 20 years. It has become highly respected in the First Aid Industry and delivers its courses to a vast range of Business and organizations ranging from Day Care Centres, Personal Trainers, Massage Schools, School teachers, Students, Office Staff, Mothers groups and the list goes on. 
+    It is the aim that all people trained by Accredited First Aid Courses will walk away with the confidence that they can perform their First Aid Duties to the utmost of their personal ability.
+    Underlying all of Accredited First Aid Courses training is the philosophy of care and humanity.</p> 
+    <p>In 1999, Rose Warner of Lower Austria attended a First Aid Class while she was expecting her first child. <em>“I was worried that if something happened to my baby I wouldn’t know what to do.”</em> 
+    Rose developed an interest in First Aid which grew stronger by the day so she booked herself into an Advanced First Aid class to improve her knowledge and skills. The more Rose spoke to people at work and home about what she was learning, the more she realised how little most of them knew of what to do in a First Aid emergency.
+    <em> “I was constantly being told that I should teach First Aid as I had a strong passion for it and had a way of stimulating other people’s interest"</em>. It was then that I decided to take up further study and start up my own training company, Accredited First Aid Courses.</p> 
+    <p>A nationally recognised training organisation, Accredited First Aid Courses has now been operating for over 20 years. It has become highly respected in the First Aid Industry and delivers its courses to a vast range of Business and organizations ranging from Day Care Centres, Personal Trainers, Massage Schools, School teachers, Students, Office Staff, Mothers groups and the list goes on. 
     In fact there is no industry that is exempt from learning First Aid especially in light of stringent Occupational Health and Safety laws. 
-    “In the workforce or at home, we all have a Duty of Care to look after the people in our lives,”  adds Rose.</p>
+    <em>“In the workforce or at home, we all have a Duty of Care to look after the people in our lives,”</em>  adds Rose.</p>
   </div>
     <!-- Review section end -->
 
