@@ -825,8 +825,8 @@ TRAINER CARDS STYLING ENDS HERE */
 .title-gallery {
   padding: 50px;
   font-size: 50px;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 1000;
+  background-color: #f5cb5c;
 }
 
 .gallery li {
