@@ -8,6 +8,10 @@ if (isset($_SESSION['user'])) {
     header("Location: ../../profile.php");
     exit;
 }
+if (isset($_SESSION['trainer'])) {
+    header("Location: ../../trainer.php");
+    exit;
+}
 if (isset($_SESSION['admin'])) {
     header("Location: ../../dashboard.php"); // redirects to dashboard.php
 }

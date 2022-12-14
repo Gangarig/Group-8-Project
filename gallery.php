@@ -64,7 +64,6 @@ if (isset($_SESSION["status"])) {
     </a>
   </li>
   
-  <li class="wide">
     <a href="./images/6.jpg">
       <img src="./images/6.jpg" alt="">
     </a>
@@ -75,15 +74,28 @@ if (isset($_SESSION["status"])) {
     </a>
   </li>
 
-  <li class="wide">
     <a href="./images/7.jpg">
       <img src="./images/7.jpg" alt="">
     </a>
   </li>
 
-  <li class="wide">
     <a href="./images/8.jpg">
       <img src="./images/8.jpg" alt="">
+    </a>
+  </li>
+
+  <a href="./images/8.jpg">
+      <img src="./images/10.jpg" alt="">
+    </a>
+  </li>
+
+  <a href="./images/8.jpg">
+      <img src="./images/11.jpg" alt="">
+    </a>
+  </li>
+
+  <a href="./images/8.jpg">
+      <img src="./images/12.jpg" alt="">
     </a>
   </li>
 </ul>
