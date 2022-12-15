@@ -21,7 +21,7 @@ $footer = '
                     <h4>Navigate</h4>
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="courses.php#courses">Courses</a></li>
+                        <li><a href="profile.php#courses">Courses</a></li>
                         <li><a href="about.php#students">Students</a></li>
                         <li><a href="gallery.php#gallery">Gallery</a></li>
                         <li><a href="contact.php#form">Contact</a></li>
