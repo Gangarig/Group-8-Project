@@ -46,16 +46,13 @@ if (isset($_SESSION["status"])) {
           $price = $row['price_business'];
       } else $price = 'Please login';
     ?>
-      <div class="card-course card-1">
+      <div class="card-course main-courses card-1">
         <div class="card__icon bi bi-currency-euro">
           <span><b><?= $price ?></b></span>
         </div>
         <p class="card__exit bi bi-alarm"><?= $row['duration'] ?></p>
         <h2 class="card__title"><?= $row['name'] ?></h2>
         <p class="card_info"><?= $row['description'] ?></p>
-        <p class="card__apply">
-          <?php if (isset($role)) { ?><a class="card__link btn btn-secondary" href="#">Apply Now <i class="fas fa-arrow-right"></i></a><?php } ?>
-        </p>
       </div>
     <?php
     }

@@ -26,6 +26,10 @@ $res = mysqli_query($link, "SELECT * FROM user WHERE id=" . $_SESSION['user']);
 $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 $msg = "";
 
+if (isset($_SESSION["status"])) {
+    $role = $_SESSION['status'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +92,7 @@ $msg = "";
                 } else $price = 'Please login';
             ?>
                 <input type="hidden" name="id" value="<?php echo $id ?>" />
-                <div class="card-course card-1">
+                <div class="card-course profile-courses card-1">
                     <div class="card__icon bi bi-currency-euro">
                         <span><b><?= $price ?></b></span>
                     </div>
@@ -96,7 +100,7 @@ $msg = "";
                     <h2 class="card__title"><?= $row['name'] ?></h2>
                     <p class="card_info"><?= $row['description'] ?></p>
                     <p class="card__apply">
-                        <a class=" m-5 btn btn-secondary" href="actions\reservations\add.php?id=<?php echo $row['id'] ?>">Apply Profile</a>
+                        <a class="card__link btn btn-secondary" href="actions\reservations\add.php?id=<?= $row['id'] ?>">Apply Now<i class=" fas fa-arrow-right"></i></a>
                     </p>
                 </div>
             <?php

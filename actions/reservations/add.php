@@ -69,7 +69,7 @@ if ($_GET['id']) {
       <form class="m-5 text-center" method="post">
           <input type="hidden" name="id" value="<?php echo $id ?>" />
           <button class=" btn btn-dark" type="submit">Confirm</button>
-          <a href="reservation.php"><button class="btn btn-dark" type="button">No, go back!</button></a>
+          <a href="../../profile.php#profile"><button class="btn btn-dark" type="button">No, go back!</button></a>
       </form>
 
 </body>
