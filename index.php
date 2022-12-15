@@ -87,7 +87,7 @@ if (isset($_SESSION["status"])) {
   <!-- Trainer Cards end -->
 
   <!-- Review section start -->
-  <div id="myCarousel" class="carousel slide w-50 mx-auto my-5">
+  <div id="myCarousel" class="carousel slide w-75 mx-auto my-5">
     <div class="carousel-inner">
       <!-- First item -->
       <div class="carousel-item active text-center">
