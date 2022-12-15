@@ -37,8 +37,8 @@ require_once('./actions/components/footer.php');
     <div id="aboutUs" class="container">
       <div class="row">
         <h1 id="about-header" style="margin: 20px;">About Us</h1>
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-lg-2 hidden-sm-down"></div>
+        <div class="col-lg-8 col-sm-12">
           <div id="back">
             <img src="images/profile1.jpg" align="right" class="responsive"/><p>With over 20 years experience, Accredited First Aid Courses has been a pioneer among the Independent First Aid Training Providers.
             With a long history of looking after the needs of Victorian’s and their Occupational Safety, Accredited First Aid Course continues to maintain high training Standards with a clear focus on client needs.
