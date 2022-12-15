@@ -53,7 +53,7 @@ $navbar = '
                         <a href="index.php" class="nav-link" id="expanded-home-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="courses.php#courses" class="nav-link">Courses</a>
+                        <a href="profile.php#courses" class="nav-link">Courses</a>
                     </li>
                     <li class="nav-item">
                         <a href="about.php#students" class="nav-link">Students</a>

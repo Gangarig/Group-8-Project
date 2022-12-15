@@ -76,7 +76,7 @@ if (isset($_SESSION["status"])) {
     <div class="container">
 
         <!-- Courses start -->
-        <div class="cards-course mt-5">
+        <div class="cards-course mt-5" id="courses">
             <?php
             $result = mysqli_query($link, "SELECT * FROM courses");
 
