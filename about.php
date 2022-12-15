@@ -53,7 +53,7 @@ require_once('./actions/components/footer.php');
     <!-- Students section start -->
     <article class="flow" id="students">
       <h1>Our Students</h1>
-      <p>
+      <p style="font-family: Roboto Condensed;font-size: 18px;">
       Here are some of the most recent from individuals who attended this course:
       </p>
       <div class="team">
